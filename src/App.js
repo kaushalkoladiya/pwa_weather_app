@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 
+import Wind from "./images/wind.png";
+
 import { fetchWeather } from "./api/fetchWeather";
 
 const App = () => {
@@ -39,6 +41,13 @@ const App = () => {
             {Math.round(weather.main.temp_min)}
             <sup>&deg;c</sup> - {Math.round(weather.main.temp_max)}
             <sup>&deg;c</sup>
+          </div>
+          <div className="wind-info">
+            <img className="wind-icon" src={Wind} alt="wind" />
+            <p style={{ margin: "10px", paddingTop: "10px" }}>
+              {weather.wind.speed}
+              <sub>k/h</sub>
+            </p>
           </div>
           <div className="info">
             <img
